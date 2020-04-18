@@ -19,7 +19,7 @@ var newHeight = parseInt(newWidth.replace('px', '')) * 0.5625 + 'px';
 var marginTop = '60px';
 var marginLeft = '10px';
 
-var base_url = "https://ruthcast.github.io/videomy/"
+var base_url = "https://github.com/RUTHCAST/videomy/"
 // var base_url = "";
 
 var hidePlayerButtons = function() {
@@ -197,8 +197,6 @@ var options = {
 				var close = document.createElement('img');
 
 				background.style = "background-image:url('" + base_url + "images/background.png');width:" + width + ';height:' + height +';background-repeat: no-repeat;';
-				logoTop.src = ''+ base_url +'images/logo.png';
-				logoTop.style = 'position:absolute;top:10px;left:10px;width: 170px;';
 
 				close.src = base_url +'images/close.png';
 				close.style = 'position:absolute;top:10px;right:10px;cursor: pointer;';
