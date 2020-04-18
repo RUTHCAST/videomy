@@ -19,8 +19,8 @@ var newHeight = parseInt(newWidth.replace('px', '')) * 0.5625 + 'px';
 var marginTop = '60px';
 var marginLeft = '10px';
 
-var base_url = "https://jtorresdev.github.io/demo-video-vast/audi"
-//var base_url = "./"
+var base_url = "https://ruthcast.github.io/videomy/"
+// var base_url = "";
 
 var hidePlayerButtons = function() {
 	var hide = 'display:none';
@@ -88,7 +88,7 @@ var playOnClick = function() {
 var makeUnmuteButton = function() {
 	var unmuteButton = document.createElement('div');
 
-	unmuteButton.innerHTML = '<img src="'+ base_url +'/assets/unmute.png">';
+	unmuteButton.innerHTML = '<img src="'+ base_url +'images/unmute.png">';
 	unmuteButton.id = 'video-id_fluid_initial_play';
 
 	var initial_play = document.getElementById('video-id_fluid_initial_play_button');
@@ -168,7 +168,7 @@ function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
 var options = {
 	layoutControls: {
 		primaryColor: '#fff',
-		posterImage: ''+ base_url +'/assets/poster.png',
+		// posterImage: ''+ base_url +'/assets/poster.png',
 		playButtonShowing: true,
 		persistentSettings: {
 			volume: false
@@ -194,92 +194,18 @@ var options = {
 				var background = document.createElement('div');
 				var bannerRight = document.createElement('div');
 				var logoTop = document.createElement('img');
-				var car = document.createElement('img');
-				var powered = document.createElement('img');
 				var close = document.createElement('img');
-				var text = document.createElement('img')
-				var free = document.createElement('div')
 
-				background.style = "background-image:url('" + base_url + "/assets/background.png');width:" + width + ';height:' + height +';background-repeat: no-repeat;';
-
-				logoTop.src = ''+ base_url +'/assets/logo.png';
+				background.style = "background-image:url('" + base_url + "images/background.png');width:" + width + ';height:' + height +';background-repeat: no-repeat;';
+				logoTop.src = ''+ base_url +'images/logo.png';
 				logoTop.style = 'position:absolute;top:10px;left:10px;width: 170px;';
 
-				car.src = ''+ base_url +'/assets/car.png';
-				car.style = 'z-index:5;position:relative';
-				
-				free.innerHTML = '<div style="text-decoration: none;cursor:pointer"><div style="width: 250px;height: 40px;font-size: 14px;font-family: AudiType;color: #fff;letter-spacing: 2px;text-transform: uppercase;line-height: 40px;position: relative;margin: 0 auto;background: rgb(0,0,0,0.5);    border: 1px solid #fff;"><span>prueba GRATIS el audi q3</span></div></div></div>'
-
-				free.addEventListener('click', function(){
-					bannerRight.style.display = 'none'
-					
-					var form = document.createElement('div')
-					var button = document.createElement('div')
-					    button.style = 'width: 100%;height: 45px;font-size: 14px;font-family: AudiType;color: #fff;letter-spacing: 2px;text-transform: uppercase;line-height: 45px;position: relative;margin: 0 auto;background: rgb(0,0,0,0.5);    border: 1px solid #fff;cursor:pointer;margin-top: 20px;'
-					var buttonHTML = ''
-						buttonHTML += '<span>Probar coche</span>'
-						buttonHTML += '<img src="' + base_url + '/assets/arrow.png" style="margin-left:10px">'
-						buttonHTML += '<img src="' + base_url + '/assets/car1.png" style="float:right">'
-						button.innerHTML = buttonHTML
-					var formHTML = ''
-						formHTML += '<span style="color: white;font-size: 16px;font-family: AudiType;text-transform:uppercase">vas a reservar\ntu prueba de conducción</span>'
-						formHTML += '<input class="form-control" placeholder="*Nombre" id="firstname"/>'
-						formHTML += '<input class="form-control" placeholder="*Apellidos" id="lastname"/>'
-						formHTML += '<input class="form-control" placeholder="*Fecha de nacimiento" id="birthday"/>'
-						formHTML += '<input class="form-control" placeholder="*Telefono" id="phone" />'
-						formHTML += '<input class="form-control" placeholder="*E.mail" id="email" />'
-						formHTML += '<input class="form-control" placeholder="*Concesionario" id="conce" />'
-
-						form.style = 'position: absolute;right: 10px;bottom: 50px;width: 290px;text-align: center;';
-						form.innerHTML = formHTML
-
-						button.addEventListener('click', function(){
-							var inputs = ['firstname', 'lastname', 'birthday', 'phone', 'email', 'conce']
-							var params = []
-							var no_pass = []
-							var action = 'send_form'
-
-							inputs.map(input => {
-								var value = document.getElementById(input).value
-								if(value == ''){
-									no_pass.push(input)
-								}else{
-									params.push(input + '=' + value)
-								}
-							})
-							if(no_pass.length === 0){
-								track(params, action)
-								form.style.bottom = '160px'
-								form.innerHTML = '<img src="' + base_url + '/assets/success.png"/>'
-							}else{
-								console.log('no apss')
-							}
-						})
-
-						form.appendChild(button)
-						wrapper.appendChild(form)
-				})
-
-				close.src = base_url +'/assets/close.png';
+				close.src = base_url +'images/close.png';
 				close.style = 'position:absolute;top:10px;right:10px;cursor: pointer;';
 				close.id = 'closeButton';
 
-				bannerRight.style = 'position: absolute;right: 10px;bottom: 120px;width: 290px;text-align: center;';
-
-				powered.src = base_url +'/assets/powered.png';
-				powered.style = 'position:absolute;bottom:10px;left:10px';
-
-				text.src = base_url + '/assets/text.png'
-				text.style = 'position:absolute;bottom:50px;left:10px'
-
-				bannerRight.appendChild(car);
-				bannerRight.appendChild(free);
-
 				wrapper.appendChild(logoTop);
 				wrapper.appendChild(close);
-				wrapper.appendChild(powered);
-				wrapper.appendChild(text);
-				wrapper.appendChild(bannerRight);
 				wrapper.appendChild(background);
 
 				close.addEventListener('click', function() {
