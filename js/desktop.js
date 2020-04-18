@@ -19,7 +19,7 @@ var newHeight = parseInt(newWidth.replace('px', '')) * 0.5625 + 'px';
 var marginTop = '60px';
 var marginLeft = '10px';
 
-var base_url = "https://github.com/RUTHCAST/videomy/"
+var base_url = "https://ruthcast.github.io/videomy/";
 // var base_url = "";
 
 var hidePlayerButtons = function() {
