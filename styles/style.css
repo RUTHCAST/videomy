@@ -1,0 +1,68 @@
+@font-face {
+            font-family: 'AudiType';
+            src: url(assets/AudiType-Normal.otf);
+        }
+
+        .fluid_video_wrapper {
+            -webkit-transition: width 3s, height 3s, margin 3s;
+            transition: width 3s, height 3s, margin 3s;
+        }
+
+        .form-control{
+            background: transparent;
+            width: 100%;
+            border: 0;
+            border-bottom: 2px solid #ffffff94;
+            margin-bottom: 5px;
+            padding: 10px 0;
+        }
+
+        .form-control:focus{
+            border-bottom: 2px solid transparent;
+            outline: none !important;
+        }
+
+        input{
+           color:white;
+        }
+
+        .form-control::placeholder{
+            font-weight: 800;
+        }
+
+        .header-container {
+            height: 60px;
+            border-bottom: 1px solid #e6ebf0;
+            padding: 0 45px;
+        }
+
+        .header {
+            width: 1260px;
+            height: 100%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .header img {
+            padding: 10px 0 0 0
+        }
+
+        .container {
+            padding: 20px 0px;
+            position: relative;
+            margin: 0 auto;
+            width: 1260px;
+            display: block;
+        }
+
+        body {
+            margin: 0
+        }
+
+        .wireframe-right {
+            background: #e6ebf0;
+            width: 350px;
+            height: 550px;
+            float: left;
+            margin: 10px 0 0 15px;
+        }
